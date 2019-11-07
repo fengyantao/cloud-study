@@ -1,0 +1,14 @@
+
+server:
+  port: 8701
+
+eureka:
+  instance:
+    instanceId: ${spring.application.name}:${vcap.application.instance-id:${spring.application.instance-id:${random.value}}}
+    hostname: peer1
+  client:
+    registerWithEureka: true #注意多注册中心,向eureka注册自己
+    fetchRegistry: true #注意多注册中心,拉取eureka的注册信息
+    serviceUrl:
+      defaultZone: http://peer2:8702/register/eureka/
+

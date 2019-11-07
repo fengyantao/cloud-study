@@ -23,6 +23,8 @@
         <module>eureka-register</module>
         <module>eureka-producer</module>
         <module>eureka-consumer</module>
+        <module>ribbon-consumer</module>
+        <module>eureka-register-high-available</module>
     </modules>
     <dependencies>
         <dependency>

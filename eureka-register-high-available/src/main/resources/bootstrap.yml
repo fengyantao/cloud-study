@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: eureka-register
+  profiles:
+    active: ${profile:peer1}
+server:
+  servlet:
+    context-path: /register

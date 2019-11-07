@@ -1,19 +1,19 @@
 spring:
   application:
-    name: eureka-consumer
+    name: ribbon-consumer
 server:
-  port: 8803
+  port: 8804
   servlet:
-    context-path: /consumer
+    context-path: /ribbon
 
 eureka:
   instance:
     instanceId: ${spring.application.name}:${vcap.application.instance-id:${spring.application.instance-id:${random.value}}}
-    hostname: localhost
+    hostname: ribbon
   client:
     registerWithEureka: true
     fetchRegistry: true
     serviceUrl:
-      defaultZone: http://localhost:8801/register/eureka/
+      defaultZone: http://peer1:8701/register/eureka/,http://peer2:8702/register/eureka/
 
 

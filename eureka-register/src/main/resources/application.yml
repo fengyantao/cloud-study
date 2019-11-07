@@ -9,7 +9,7 @@ server:
 eureka:
   instance:
     instanceId: ${spring.application.name}:${vcap.application.instance-id:${spring.application.instance-id:${random.value}}}
-    hostname: register
+    hostname: localhost
   client:
     registerWithEureka: false #不向eureka注册自己
     fetchRegistry: false #不拉取eureka的注册信息
