@@ -42,7 +42,7 @@ eureka:
     secureHealthCheckUrl: #获取此实例的绝对安全运行状况检查页面URL。如果运行状况检查页面位于与eureka对话的同一实例中，则用户可以提供secureHealthCheckUrl，否则，如果该实例是其他服务器的代理，则用户可以提供完整的URL。如果提供了完整的URL，则优先。通常用于根据实例的运行状况做出明智的决策-例如，它可用于确定是否继续进行整个场的部署或停止部署而不会造成进一步的损害。完整的URL应该采用http//${eureka.hostname}7001/的格式，其中 ${eureka.hostname}的值将在运行时替换
     namespace: eureka #获取用于查找属性的名称空间。在Spring Cloud中被忽略
     preferIpAddress: false #在猜测主机名时，应根据操作系统报告的主机名使用服务器的IP地址,默认false
-#    initialStatus:  #向远程Eureka服务器注册的初始状态,默认InstanceStatus.UP
+    initialStatus: up  #向远程Eureka服务器注册的初始状态,默认InstanceStatus.UP
 
   client:
     enabled: true #是否开启eureka客户端标识
