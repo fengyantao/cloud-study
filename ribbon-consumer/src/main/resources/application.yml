@@ -9,7 +9,7 @@ server:
 eureka:
   instance:
     instanceId: ${spring.application.name}:${vcap.application.instance-id:${spring.application.instance-id:${random.value}}}
-    hostname: ribbon
+    hostname: localhost
   client:
     registerWithEureka: true
     fetchRegistry: true

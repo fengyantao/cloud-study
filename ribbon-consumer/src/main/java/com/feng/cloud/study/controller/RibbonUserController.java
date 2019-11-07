@@ -22,11 +22,33 @@ public class RibbonUserController {
     @Autowired
     private RestTemplate restTemplate;
 
+    /**
+     * 正确示例
+     * 使用eureka实例注册名访问
+     *
+     * @return
+     */
     @GetMapping("/findMovies")
     public String findMovies() {
         //注意这里使用的eureka实例的注册名
         ResponseEntity<String> forEntity = restTemplate
-                .getForEntity("http://eureka-producer/producer/movie/test", String.class);
+                .getForEntity("http://eureka-producer/producer/movie/getAllMovies", String.class);
+        String body = forEntity.getBody();
+        return body;
+
+    }
+
+    /**
+     * 错误示例
+     * 使用ip:port形式访问
+     *
+     * @return
+     */
+    @GetMapping("/findMoviesError")
+    public String findMoviesError() {
+        //如果使用ip:port形式访问,则会报错 java.lang.IllegalStateException: No instances available for localhost
+        ResponseEntity<String> forEntity = restTemplate
+                .getForEntity("http://localhost:8802/producer/movie/getAllMovies", String.class);
         String body = forEntity.getBody();
         return body;
 
