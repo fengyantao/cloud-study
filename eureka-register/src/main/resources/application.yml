@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: eureka-register
+server:
+  port: 8801
+  servlet:
+    context-path: /register
+
+eureka:
+  instance:
+    instanceId: ${spring.application.name}:${vcap.application.instance-id:${spring.application.instance-id:${random.value}}}
+    hostname: register
+  client:
+    registerWithEureka: false #不向eureka注册自己
+    fetchRegistry: false #不拉取eureka的注册信息
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
