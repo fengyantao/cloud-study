@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: hystrix-consumer
+server:
+  port: 8903
+  servlet:
+    context-path: /hystrix
+
+eureka:
+  instance:
+    instanceId: ${spring.application.name}:${vcap.application.instance-id:${spring.application.instance-id:${random.value}}}
+    hostname: localhost
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:8801/register/eureka/
+
+

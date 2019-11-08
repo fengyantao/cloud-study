@@ -23,7 +23,7 @@ public class UserController {
 
     @GetMapping("/findMovies")
     public String findMovies() {
-        ResponseEntity<String> forEntity = restTemplate.getForEntity("http://localhost:8802/producer/movie/getAllMovies", String.class);
+        ResponseEntity<String> forEntity = restTemplate.getForEntity("http://localhost:8802/producer/movie/test", String.class);
         String body = forEntity.getBody();
         return body;
     }

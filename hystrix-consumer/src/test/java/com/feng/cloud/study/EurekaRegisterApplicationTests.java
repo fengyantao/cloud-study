@@ -4,10 +4,10 @@ import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-public class EurekaRegisterApplicationTests {
+class EurekaRegisterApplicationTests {
 
     @Test
-   public void contextLoads() {
+    void contextLoads() {
     }
 
 }

@@ -6,10 +6,11 @@
         <groupId>com.feng</groupId>
         <artifactId>cloud-study</artifactId>
         <version>0.0.1-SNAPSHOT</version>
+        <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <artifactId>eureka-register-high-available</artifactId>
+    <artifactId>hystrix-consumer</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>eureka-register-high-available</name>
+    <name>hystrix-consumer</name>
     <description>cloud study for two month</description>
 
     <properties>
@@ -19,14 +20,18 @@
     <dependencies>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-netflix-eureka-server</artifactId>
+            <artifactId>spring-cloud-starter-eureka</artifactId>
+            <version>1.4.7.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-eureka-server</artifactId>
+            <artifactId>spring-cloud-starter-hystrix</artifactId>
             <version>1.4.7.RELEASE</version>
         </dependency>
-
     </dependencies>
 
     <build>

@@ -12,6 +12,7 @@
     <artifactId>cloud-study</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>cloud-study</name>
+    <packaging>pom</packaging>
     <description>cloud study for two month</description>
 
     <properties>
@@ -25,6 +26,7 @@
         <module>eureka-consumer</module>
         <module>ribbon-consumer</module>
         <module>eureka-register-high-available</module>
+        <module>hystrix-consumer</module>
     </modules>
     <dependencies>
         <dependency>
