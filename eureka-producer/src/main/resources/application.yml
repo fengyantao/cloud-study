@@ -17,7 +17,7 @@ server:
 
 eureka:
   instance:
-    instanceId: ${spring.application.name}:${vcap.application.instance-id:${spring.application.instance-id:${random.value}}} #获取要在eureka注册的此实例的唯一ID（在appName范围内）
+    instanceId: ${spring.application.name}:${spring.cloud.client.ip-address}:${server.port} #获取要在eureka注册的此实例的唯一ID（在appName范围内）
     hostname: localhost  #主机名（如果可以在配置时确定的话）
 
   client:
@@ -25,7 +25,7 @@ eureka:
     registerWithEureka: true #注册本身实例到eureka,默认true
     fetchRegistry: true #拉取eureka其他注册实例到本地,默认true
     serviceUrl: #可用区映射到与eureka服务器通信的标准URL列表。每个值可以是单个URL，也可以是逗号分隔的*位置列表。通常，eureka服务器URL带有协议，主机，端口，上下文和版本信息（如果有）。示例： https://ec2-256-156-243-129.compute-1.amazonaws.com:7001/eureka/ 更改在下一个服务URL刷新周期（由eurekaServiceUrlPollIntervalSeconds指定）下在运行时有效
-      defaultZone: http://localhost:8801/register/eureka/ #默认defaultZone:http://localhost:8761/eureka/
+      defaultZone: http://localhost:8701/register/eureka/,http://localhost:8702/register/eureka/  #默认defaultZone:http://localhost:8761/eureka/
 
 
 

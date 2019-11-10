@@ -15,5 +15,9 @@ eureka:
     fetchRegistry: true
     serviceUrl:
       defaultZone: http://peer1:8701/register/eureka/,http://peer2:8702/register/eureka/
+ribbon:
+  eager-load:
+    clients: eureka-producer #需要架构加载的服务名
+    enabled: true #开启ribbon饥饿加载模式
 
 

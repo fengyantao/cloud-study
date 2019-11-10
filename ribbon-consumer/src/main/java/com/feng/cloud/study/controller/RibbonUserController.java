@@ -1,8 +1,6 @@
 package com.feng.cloud.study.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cloud.client.loadbalancer.LoadBalanced;
-import org.springframework.context.annotation.Bean;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -54,9 +52,4 @@ public class RibbonUserController {
 
     }
 
-    @Bean
-    @LoadBalanced //开启负载均衡
-    public RestTemplate getRestTemplate() {
-        return new RestTemplate();
-    }
 }
