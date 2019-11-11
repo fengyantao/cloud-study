@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: openfeign-consumer
+server:
+  port: 8603
+  servlet:
+    context-path: /openfeign
+
+eureka:
+  instance:
+    instanceId: ${spring.application.name}:${vcap.application.instance-id:${spring.application.instance-id:${random.value}}}
+    hostname: localhost
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:8801/register/eureka/
+feign:
+  httpclient:
+    enabled: true #使用httpclient
+  okhttp:
+    enabled: false #不启用okhttp
+  compression:
+    request:
+      enabled: true #启用请求压缩
+      mime-types: text/xml,application/xml,application/json
+      min-request-size: 2048
+    response:
+      enabled: true #启用响应压缩
+
+
+

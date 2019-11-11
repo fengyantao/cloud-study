@@ -27,6 +27,7 @@
         <module>ribbon-consumer</module>
         <module>eureka-register-high-available</module>
         <module>hystrix-consumer</module>
+        <module>openfeign-consumer</module>
     </modules>
     <dependencies>
         <dependency>
