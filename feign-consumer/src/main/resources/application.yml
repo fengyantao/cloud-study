@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: feign-consumer
+server:
+  port: 8503
+  servlet:
+    context-path: /feignConsumer
+
+eureka:
+  instance:
+    instanceId: ${spring.application.name}:${vcap.application.instance-id:${spring.application.instance-id:${random.value}}}
+    hostname: localhost
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:8801/register/eureka/
+
+

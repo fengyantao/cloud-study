@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: feign-producer
+  jpa:
+    showSql: true
+    generateDdl: false
+    hibernate:
+      ddlAuto: none
+  datasource:
+    platform: h2
+    schema: classpath:schmea.sql
+    data: classpath:data.sql
+server:
+  port: 8502
+  servlet:
+    context-path: /feignPro
+
+eureka:
+  instance:
+    instanceId: ${spring.application.name}:${vcap.application.instance-id:${spring.application.instance-id:${random.value}}}
+    hostname: localhost
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:8801/register/eureka/
+
+
+
