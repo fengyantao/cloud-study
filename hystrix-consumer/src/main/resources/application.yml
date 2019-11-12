@@ -15,5 +15,11 @@ eureka:
     fetchRegistry: true
     serviceUrl:
       defaultZone: http://localhost:8801/register/eureka/
+#hystrix数据监控
+turbine:
+  aggregator:
+    cluster-config: default
+  app-config: hystrix-consumer
+
 
 
